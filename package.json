@@ -1,0 +1,20 @@
+{
+  "name": "employment-application-tracker",
+  "version": "1.0.0",
+  "description": "termainal based employment application tracking software",
+  "main": "load.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "job",
+    "employment",
+    "search",
+    "interview",
+    "offer",
+    "terminal",
+    "tracker"
+  ],
+  "author": "Antony Lester",
+  "license": "MIT"
+}
