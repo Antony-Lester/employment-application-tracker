@@ -7,5 +7,5 @@ export default () => {
     const interviews = getInterviews('count')
     const offers = getOffers('count')
     return Promise.all([applications, interviews, offers])
-    .then((summery) => {console.log(...summery)})
+    .then((summary) => {console.log(...summary)})
 }
