@@ -5,6 +5,9 @@ export default (query) => {
         case 'count' :
             return readdir('./data/applications')
                 .then((files)=>{return files.length})
+        case 'count-log' :
+            return readdir('./data/applications')
+                .then((files)=>{return files.length})
                 .then((count)=>{
                     if(count > 324){return `\x1b[32m         Applications ${count} 🤯 `}
                     else if(count > 162){return `\x1b[32m          Applications ${count} 🚀 `}

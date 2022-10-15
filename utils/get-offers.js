@@ -5,6 +5,9 @@ export default (query) => {
         case 'count' :
             return readdir('./data/offers')
                 .then((files)=>{return files.length})
+        case 'count-log' :
+            return readdir('./data/offers')
+                .then((files)=>{return files.length})
                 .then((count)=>{
                     if(count > 8){return `\x1b[32m Offers ${count} 🤯 `}
                     else if(count > 7){return `\x1b[32m Offers ${count} 🚀 \x1b[0m`}

@@ -5,6 +5,9 @@ export default (query) => {
         case 'count' :
             return readdir('./data/interviews')
                 .then((files)=>{return files.length})
+        case 'count-log' :
+            return readdir('./data/interviews')
+                .then((files)=>{return files.length})
                 .then((count)=>{
                     if(count > 30){return `\x1b[32m Interviews ${count} 🤯 `}
                     else if(count > 27){return `\x1b[32m Interviews ${count} 🚀 `}
