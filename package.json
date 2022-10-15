@@ -16,5 +16,11 @@
     "tracker"
   ],
   "author": "Antony Lester",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "node": "^18.10.0",
+    "node-emoji": "^1.11.0"
+  },
+  "type": "module"
 }

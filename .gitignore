@@ -1,0 +1,5 @@
+./data/applications/*
+./data/interviews/*
+./data/offers/*
+./data/user/*
+node_modules
