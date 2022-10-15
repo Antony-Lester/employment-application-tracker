@@ -33,16 +33,13 @@ const fatal =
 We can only cover the United Kingdom 🇬🇧 at the present time.
 
                            ⛔ Error ⛔`
-const welcome =
-`
-                        👍 Welcome 👉`
+
 export default () => {
     inquirer.prompt(questions)
-      .then((answers) => {writeFile('./data/user/user.json',JSON.stringify(answers, null, 2)); return answers})
-      .then((answers) => {
-          if (answers.user_location === 'No') {console.log('\x1b[33m%s\x1b[0m',disclaimer)}
-          if (answers.user_location === 'No'&& answers.user_relocate === 'No')
-            {unlink('./data/user/user.json');console.log('\x1b[31m',fatal)}
-            else {console.log('\x1b[32m', welcome,answers.user_name)}
-    })
+        .then((answers) => {writeFile('./data/user/user.json',JSON.stringify(answers, null, 2)); return answers})
+        .then((answers) => {
+            if (answers.user_location === 'No') {console.log('\x1b[33m%s\x1b[0m',disclaimer)}
+            if (answers.user_location === 'No'&& answers.user_relocate === 'No')
+                {unlink('./data/user/user.json');console.log('\x1b[31m',fatal)}
+            else {controller()}})
 }
