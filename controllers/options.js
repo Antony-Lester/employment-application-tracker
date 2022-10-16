@@ -17,8 +17,10 @@ const options = {
   message: 'What would you like to do?',
   choices: [],
 }
-export default () => {
-    return getOffers('count')
+export default async () => {
+    while(true){
+        options.choices = []
+    await getOffers('count')
         .then((count) => {if (count > 0){options.choices.push('add a Application', 'add a Interview', 'add an Employment Offer', new inquirer.Separator(), 'view Applications', 'view Interviews', 'view Employment Offers', 'view Statistics'); Promise.resolve()}; return})
         .then(() => {return getInterviews('count').then((count) => {if (count > 0){options.choices.push('add a Application', 'add a Interview', 'add an Employment Offer', new inquirer.Separator(), 'view Applications', 'view Interviews', 'view Statistics'); Promise.resolve()}; return})})
         .then(() => {return getApplications('count').then((count) => {if (count > 0){options.choices.push('add a Application', 'add a Interview', new inquirer.Separator(), 'view Applications', 'view Statistics'); return}else{options.choices.push('add a Application'); return}})})
@@ -32,4 +34,5 @@ export default () => {
             else if (selected === 'view Employment Offers'){return getOffers()}
             else {return getStatistics()}})
         .then(() => {return summary()})
+        }
     }

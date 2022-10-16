@@ -11,5 +11,5 @@ const welcome =
 
 export default () => {
     readFile('./data/user/user.json').then((data) => {return console.log('\x1b[32m', welcome,JSON.parse(data).user_name)})
-    summary().then(() => {options().then(() => {return})})
+    summary().then(() => {options()})
 }

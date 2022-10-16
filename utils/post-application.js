@@ -3,6 +3,7 @@ import inquirer from 'inquirer'
 
 import adjustedSalary from '../utils/adjusted-salary.js'
 import adjustedSalaryPerHour from '../utils/adjusted-salary-per-hour.js'
+import controller from '../controller.js'
 
 const stringValidate = (input) => {return input.length > 5}
 const jobTypeValidate = (input) => {return input === 'Office' || input === 'Hybrid' || input === 'Remote'}
@@ -112,5 +113,4 @@ export default () => {
         .then(() => {answers.adjusted_salary_per_hour_max = adjustedSalaryPerHour(answers.adjusted_salary_max, answers.job_time)})
         .then(() => {answers.date = Date.now()})
         .then(() => {writeFile(`./data/applications/${applicationId}`,JSON.stringify(answers, null, 2))})
-        .then(() => {return})
 }
