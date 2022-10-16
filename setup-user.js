@@ -36,7 +36,7 @@ We can only cover the United Kingdom 🇬🇧 at the present time.
 
 export default () => {
     inquirer.prompt(questions)
-        .then((answers) => {writeFile('./data/user/user.json',JSON.stringify(answers, null, 2)); return answers})
+        .then((answers) => { writeFile('./data/user/user.json',JSON.stringify(answers, null, 2)).resolve(); return answers})
         .then((answers) => {
             if (answers.user_location === 'No') {console.log('\x1b[33m%s\x1b[0m',disclaimer)}
             if (answers.user_location === 'No'&& answers.user_relocate === 'No')

@@ -10,10 +10,6 @@ const welcome =
                         👍 Welcome 👉`
 
 export default () => {
-    readFile('./data/user/user.json')
-        .then((data) => {console.log('\x1b[32m', welcome,JSON.parse(data).user_name)})
-        .then(() => {return summary()})
-        .then(() => {return options()})
-
-
+    readFile('./data/user/user.json').then((data) => {return console.log('\x1b[32m', welcome,JSON.parse(data).user_name)})
+    summary().then(() => {options().then(() => {return})})
 }

@@ -1,6 +1,7 @@
 import getApplications from '../utils/get-applications.js'
 import getInterviews from '../utils/get-interviews.js'
 import getOffers from '../utils/get-offers.js'
+import options from '../controllers/options.js'
 
 export default () => {
     const applications = getApplications('count-log')
@@ -8,4 +9,5 @@ export default () => {
     const offers = getOffers('count-log')
     return Promise.all([applications, interviews, offers])
     .then((summary) => {console.log(...summary)})
+    .then(() => {return options()})
 }
