@@ -29,7 +29,7 @@ export default async () => {
             if (selected === 'add a Application') {return addApplication()}
             else if (selected === 'add a Interview') {return addInterview()}
             else if (selected === 'add an Employment Offer') {return addOffer()}
-            else if (selected === 'view Applications') {return getApplications()}
+            else if (selected === 'view Applications') {return getApplications('all')}
             else if (selected === 'view Interviews') {return getInterviews()}
             else if (selected === 'view Employment Offers'){return getOffers()}
             else {return getStatistics()}})
