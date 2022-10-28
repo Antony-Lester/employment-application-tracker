@@ -1,2 +1,3 @@
-./data*
+data/
+Job-App-Tracker
 node_modules
