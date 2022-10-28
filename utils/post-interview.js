@@ -31,7 +31,7 @@ const questions = [
     },
     {
       type: 'input',
-      name: 'time_of_interviewd',
+      name: 'time_of_interview',
       message: 'What time is the Interview? 00:00 ',
       validate: timeSelected
     },
